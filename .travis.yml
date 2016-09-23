@@ -1,38 +1,20 @@
 language: python
-sudo: false
-matrix:
-  include:
-  - python: 3.5
-
-env:
-   global:
-     - SSH_KEY='./travis/travis_key'
-
-before_install:
-- openssl aes-256-cbc -K $encrypted_8b5c89e9c96b_key -iv $encrypted_8b5c89e9c96b_iv
-  -in ./travis/travis_key.enc -out ./travis/travis_key -d
-- chmod 600 $SSH_KEY
-- eval `ssh-agent -s`
-- ssh-add $SSH_KEY
-
+python:
+  - "3.4"
+cache: pip
+# command to install dependencies
+branches:
+  only:
+  - source
 install:
-- pip install pelican markdown pyyaml fabric3
-
+- pip install --upgrade pip
+- pip install --upgrade wheel
+- pip install --upgrade setuptools
+- pip install -r requirements.txt
+before_script:
+- pelican-themes -i ./theme/elegant
 script:
-- git config --global user.email "TravisBot@nomail"
-- git config --global user.name "TravisBot"
-- git config --global push.default simple
-- git remote set-url origin git@github.com:benlaken/benlaken.github.io
-- git remote set-branches --add origin master
-- git remote set-branches --add origin run
-- git remote -v
-- git fetch origin
-- git branch -avv
-- git checkout -b run origin/run
-- fab build
-- git add output/*
-- git status -uno
-- git commit -m "update from $(date)"
-- git subtree split --prefix output -b gh-pages
-after_success:
-- ./travis/deploy.sh
+- make publish github
+env:
+  global:
+  - secure: GH_KEY
