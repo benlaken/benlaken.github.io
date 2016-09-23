@@ -12,6 +12,6 @@ install:
 - pip install --upgrade setuptools
 - pip install pelican ghp-import
 before_script:
-- pelican-themes -i ./theme/elegant
+#- pelican-themes -i ./theme
 script:
 - make publish github

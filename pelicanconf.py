@@ -35,4 +35,4 @@ DEFAULT_PAGINATION = 7
 #RELATIVE_URLS = True
 
 #THEME = "/Users/Ben/anaconda/lib/python3.5/site-packages/pelican/themes/notmyidea"
-THEME = "theme"
+THEME = "./theme"
