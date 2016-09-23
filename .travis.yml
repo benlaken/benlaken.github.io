@@ -5,7 +5,7 @@ cache: pip
 # command to install dependencies
 branches:
   only:
-  - source
+  - master
 install:
 - pip install --upgrade pip
 - pip install --upgrade wheel
@@ -15,6 +15,3 @@ before_script:
 - pelican-themes -i ./theme/elegant
 script:
 - make publish github
-env:
-  global:
-  - secure: GH_KEY
