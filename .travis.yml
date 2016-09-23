@@ -14,4 +14,7 @@ install:
 before_script:
 #- pelican-themes -i ./theme
 script:
+- pwd
+- whoami
+- ls
 - make publish github
