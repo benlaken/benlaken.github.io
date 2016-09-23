@@ -25,7 +25,7 @@ CLOUDFILES_CONTAINER=my_cloudfiles_container
 
 DROPBOX_DIR=~/Dropbox/Public/
 
-GITHUB_PAGES_BRANCH=gh_pages
+GITHUB_PAGES_BRANCH=gh-pages
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -118,7 +118,12 @@ cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
 github: publish
-	ghp-import -n $(OUTPUTDIR)
-	@git push -fq git@github.com:$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
+	ghp-import -b $(GITHUB_PAGES_BRANCH) -n $(OUTPUTDIR)
+	git config --global user.email "travis@travis.com"
+	git config --global user.name "Travis"
+	git config --global push.default simple
+	git remote set-url origin git@github.com:benlaken/benlaken.github.io
+	git push -f origin $(GITHUB_PAGES_BRANCH)
+	#@git push -fq git@github.com:$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
 
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
