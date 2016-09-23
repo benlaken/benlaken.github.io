@@ -1,2 +1,3 @@
 # benlaken.github.io
-Blog repo
+
+Content to serve to the blog benlaken.com 
