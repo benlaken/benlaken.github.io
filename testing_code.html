@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discovering the importance of automated code testing - Test blog ben</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />-->
+        <link href="http://benlaken.com/theme/static/css/style.css" rel="stylesheet" />
+        <!-- jQuery Version 1.11.0 -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!--Scroll to Jquery-->
+        <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+        <!--Carrousel Functionalities-->
+        <script src="http://benlaken.com/theme/static/js/CarrouselFunctionalities.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug Carrousel-->
+        <script src="http://benlaken.com/theme/static/js/ie10-viewport-bug-workaround.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="theme/static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link href="http://benlaken.com/theme/static/css/carousel.css" rel="stylesheet">
+        <!-- blah end -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://benlaken.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Test blog ben Full Atom Feed" />
+        <link href="http://benlaken.com/feeds/post.atom.xml" type="application/atom+xml" rel="alternate" title="Test blog ben Categories Atom Feed" />
+    </head>
+
+    <body id="index" class="archive">
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="color:white">Ben's site</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse" style="color:white">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="blah">Blog</a></li>
+        <li><a href="blah">Works</a></li>
+        <li><a href="blah">About</a></li>
+      </ul>
+      <ul class="navbar-nav navbar-right" style="list-style-type:none;">
+          <li><a href="https://twitter.com/benlaken" target="_blank"><i class="fa fa-twitter fa-3x"></i></li>
+          <li><a href="https://github.com/benlaken" target="_blank" style="padding:15px;"><i class="fa fa-github-square fa-3x"></i></a></li>
+          <li><a href="https://www.linkedin.com/pub/benjamin-laken/87/890/a30" target="_blank"> <i class="fa fa-linkedin-square fa-3x"></i></a></li>
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</nav><!-- /.navbar -->       <div class="row">
+        <div class="col-md-8">
+
+<div class="container">
+<section id="content" class="article content">
+  <header>
+    <h2 class="entry-title">
+      <a href="http://benlaken.com/testing_code.html" rel="bookmark"
+         title="Permalink to Discovering the importance of automated code testing">Discovering the importance of automated code testing</a></h2>
+ 
+  </header>
+
+<div class="container">
+    <div class="entry-content">
+      <p>Regression testing, unit tests, Test driven development, automated
+testing, defensive programming. Despite years in research, these were
+not terms I had heard, not from my supervisors or peers, nor at
+conferences, and certainly not in journals or other scientific forums.
+Yet after working for a few months in <a href="http://www.ucl.ac.uk/research-it-services">UCL's
+RITS</a> <a href="http://www.ucl.ac.uk/research-it-services/about/research-software-development">Research Software
+Development
+team</a>,
+a group that emphasises software development to improve Science, I have
+woken up to the reality that software developers have known for a long
+time:</p>
+<p><em>"Code without tests is broken by design"</em> - <a href="https://jacobian.org">Jacob
+Kaplan-Moss</a></p>
+<p>Does this mean that all the scientific code written by myself and the
+hundreds of thousands of other researchers globally that more-or-less
+ignores testing is useless? Not at all. It does means that the code
+might not be robust, may be unable to deal with edge cases, and may
+(probably) hide bugs.</p>
+<p>If you have ever tried to re-use a script written to produce data for a
+specific publication, you will already know that it can take some work
+to get it to run in a different environment or on different data. But
+without tests there is know way to even know if the code works the way
+in which the original authors intended it to.</p>
+<p>For anyone interested in getting started with testing (it's never too
+late), check out the course material from UCL's <a href="http://development.rc.ucl.ac.uk/training/engineering/">MPHYG001: Research
+software Engineering with
+Python</a>, by the
+RSD team leader <a href="https://iris.ucl.ac.uk/iris/browse/profile?upi=JHETH53">Dr. James
+Heatherington</a>.
+There is also nice material from the <a href="http://pythontesting.net/test-podcast/">Test and Code
+podcast</a> by <a href="https://twitter.com/brianokken">Brian
+Okken</a>, including a useful ebook. He can
+also be heard discussing testing on the excellent <a href="https://twitter.com/talkpython">Talk Python to
+Me</a> podcast <a href="https://talkpython.fm/episodes/show/45/the-python-testing-column-now-a-thing">Episode
+#45</a>.</p>
+<p>After my quick education in testing I would say that intentionally
+writing code without tests is equivalent actively trying to ignore
+problems. In a purely software development context this would simply be
+passing on a <a href="https://en.wikipedia.org/wiki/Technical_debt">technical
+debt</a>. In the context of
+Science however, the negative impacts will land on you much more
+directly. As it's your personal reputation that rests on the credibility
+of your work. So start testing!</p>
+<p>Banner photo credit <a href="https://www.flickr.com/photos/jc/2824253273/in/photolist-4FGR4v-5iz36X-8G1uXV-7w2Qiv-o5zxto-9AwFd3-3cpzbd-9AtL4n-48zoQq-9AwFjj-D3Ggt-DmzuR-pSfzW-xwTA7-7vnuo-pScys-zPTaq-7qd5hz-r7MxJ-qMjh4-a4wyn-r7MxK-zPRkT-pScyx-pScyw-unfhM-pScyu-pScyv-pScyt">James
+Clarke</a>.</p>
+    </div><!-- /.entry-content -->
+</div>
+
+   <footer class="post-info text-muted">
+    Posted on <abbr class="published" title="2016-06-17T09:27:00+01:00">
+      Fri 17 June 2016
+    </abbr>
+    <address class="vcard author">
+      by <a class="url fn" href="http://benlaken.com/author/benjamin-laken.html">Benjamin Laken</a>
+    </address> in <a href="http://benlaken.com/category/post.html">Post</a> Tagged <a href="http://benlaken.com/tag/automated-testing.html">automated testing </a><a href="http://benlaken.com/tag/python.html">Python </a><a href="http://benlaken.com/tag/code.html">code </a>  </footer><!-- /.post-info -->
+</section>
+  </div>
+        </div>
+        <div class="col-md-4" >
+<div class="container">
+  <!-- Twitter Widget below -->
+  <a class="twitter-timeline" href="https://twitter.com/benlaken" data-widget-id="497341986441920512">Tweets by @benlaken</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>         </div>
+      </div>
+<footer id="contentinfo" class="footer">
+        <nav class="pull-right bottom-nav">
+            <a href="http://benlaken.com/feeds/all.atom.xml">RSS</a>
+        </nav>
+        <address id="about" class="vcard body">
+        &copy; <a href="http://benlaken.com">Test blog ben</a> Proudly powered by <a href="http://getpelican.com/">Pelican</a>
+        </address>
+</footer>
+
+      <!-- Google Analytics -->
+      <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-XXXXX-Y', 'auto');
+      ga('send', 'pageview');
+      </script>
+      <script async src='https://www.google-analytics.com/analytics.js'></script>
+      <!-- End Google Analytics -->
+
+    </body>
+</html>

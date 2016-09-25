@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Test blog ben</title><link href="http://benlaken.com/" rel="alternate"></link><link href="http://benlaken.com/feeds/post.atom.xml" rel="self"></link><id>http://benlaken.com/</id><updated>2016-06-17T09:27:00+01:00</updated><entry><title>Discovering the importance of automated code testing</title><link href="http://benlaken.com/testing_code.html" rel="alternate"></link><published>2016-06-17T09:27:00+01:00</published><updated>2016-06-17T09:27:00+01:00</updated><author><name>Benjamin Laken</name></author><id>tag:benlaken.com,2016-06-17:testing_code.html</id><summary type="html">&lt;p&gt;Regression testing, unit tests, Test driven development, automated
+testing, defensive programming. Despite years in research, these were
+not terms I had heard, not from my supervisors or peers, nor at
+conferences, and certainly not in journals or other scientific forums.
+Yet after working for a few months in &lt;a href="http://www.ucl.ac.uk/research-it-services"&gt;UCL's
+RITS&lt;/a&gt; &lt;a href="http://www.ucl.ac.uk/research-it-services/about/research-software-development"&gt;Research Software
+Development
+team&lt;/a&gt;,
+a group that emphasises software development to improve Science, I have
+woken up to the reality that software developers have known for a long
+time:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;"Code without tests is broken by design"&lt;/em&gt; - &lt;a href="https://jacobian.org"&gt;Jacob
+Kaplan-Moss&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Does this mean that all the scientific code written by myself and the
+hundreds of thousands of other researchers globally that more-or-less
+ignores testing is useless? Not at all. It does means that the code
+might not be robust, may be unable to deal with edge cases, and may
+(probably) hide bugs.&lt;/p&gt;
+&lt;p&gt;If you have ever tried to re-use a script written to produce data for a
+specific publication, you will already know that it can take some work
+to get it to run in a different environment or on different data. But
+without tests there is know way to even know if the code works the way
+in which the original authors intended it to.&lt;/p&gt;
+&lt;p&gt;For anyone interested in getting started with testing (it's never too
+late), check out the course material from UCL's &lt;a href="http://development.rc.ucl.ac.uk/training/engineering/"&gt;MPHYG001: Research
+software Engineering with
+Python&lt;/a&gt;, by the
+RSD team leader &lt;a href="https://iris.ucl.ac.uk/iris/browse/profile?upi=JHETH53"&gt;Dr. James
+Heatherington&lt;/a&gt;.
+There is also nice material from the &lt;a href="http://pythontesting.net/test-podcast/"&gt;Test and Code
+podcast&lt;/a&gt; by &lt;a href="https://twitter.com/brianokken"&gt;Brian
+Okken&lt;/a&gt;, including a useful ebook. He can
+also be heard discussing testing on the excellent &lt;a href="https://twitter.com/talkpython"&gt;Talk Python to
+Me&lt;/a&gt; podcast &lt;a href="https://talkpython.fm/episodes/show/45/the-python-testing-column-now-a-thing"&gt;Episode
+#45&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After my quick education in testing I would say that intentionally
+writing code without tests is equivalent actively trying to ignore
+problems. In a purely software development context this would simply be
+passing on a &lt;a href="https://en.wikipedia.org/wiki/Technical_debt"&gt;technical
+debt&lt;/a&gt;. In the context of
+Science however, the negative impacts will land on you much more
+directly. As it's your personal reputation that rests on the credibility
+of your work. So start testing!&lt;/p&gt;
+&lt;p&gt;Banner photo credit &lt;a href="https://www.flickr.com/photos/jc/2824253273/in/photolist-4FGR4v-5iz36X-8G1uXV-7w2Qiv-o5zxto-9AwFd3-3cpzbd-9AtL4n-48zoQq-9AwFjj-D3Ggt-DmzuR-pSfzW-xwTA7-7vnuo-pScys-zPTaq-7qd5hz-r7MxJ-qMjh4-a4wyn-r7MxK-zPRkT-pScyx-pScyw-unfhM-pScyu-pScyv-pScyt"&gt;James
+Clarke&lt;/a&gt;.&lt;/p&gt;</summary><category term="automated testing"></category><category term="Python"></category><category term="code"></category></entry></feed>
